@@ -74,7 +74,7 @@ export default function Footer() {
             </div>
 
             <div className="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-stone-500">
-                <p>© {new Date().getFullYear()} جميع الحقوق محفوظة لمؤسسة المهند للرخام.</p>
+                <p>© {new Date().getFullYear()} جميع الحقوق محفوظة لمؤسسة المهند للرخام (v2.0).</p>
                 <div className="flex gap-6">
                     <Link href="#" className="hover:text-white">سياسة الخصوصية</Link>
                     <Link href="#" className="hover:text-white">الشروط والأحكام</Link>
