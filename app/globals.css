@@ -3,8 +3,8 @@
 :root {
   --background: #f9f8f6;
   --foreground: #1a1a1a;
-  --gold: #d4af37;
-  --gold-dark: #b8860b;
+  --gold: #BFA37C;
+  --gold-dark: #8E734B;
   --deep-red: #800000;
   --deep-red-dark: #5a0000;
 }
@@ -16,14 +16,25 @@
   --color-gold-dark: var(--gold-dark);
   --color-deep-red: var(--deep-red);
   --color-deep-red-dark: var(--deep-red-dark);
-  --font-sans: var(--font-cairo), ui-sans-serif, system-ui, sans-serif;
+  --font-ibm: var(--font-ibm);
+  --font-almarai: var(--font-almarai);
+  --font-al-qassam: var(--font-al-qassam);
+  --font-sans: var(--font-almarai), ui-sans-serif, system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: 'Al Qassam';
+  src: url('/fonts/al-qassam.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @layer base {
   :root {
-    --font-amiri: var(--font-amiri);
     --font-ibm: var(--font-ibm);
     --font-almarai: var(--font-almarai);
+    --font-al-qassam: 'Al Qassam', serif;
   }
 
   body {
@@ -40,16 +51,22 @@
   }
 }
 
+@layer utilities {
+  .font-al-qassam {
+    font-family: var(--font-al-qassam);
+  }
+
+  .font-ibm {
+    font-family: var(--font-ibm), sans-serif;
+  }
+
+  .font-almarai {
+    font-family: var(--font-almarai), sans-serif;
+  }
+}
+
 @layer components {
   .btn-gold {
     @apply bg-gold text-white px-6 py-2 rounded-sm transition-all hover:bg-gold-dark active:scale-95 font-medium;
-  }
-
-  .glass {
-    @apply bg-white/70 backdrop-blur-md border border-white/20;
-  }
-
-  .marble-gradient {
-    @apply bg-gradient-to-br from-white via-zinc-50 to-zinc-100;
   }
 }

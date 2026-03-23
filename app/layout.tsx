@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans_Arabic, Almarai, Amiri } from "next/font/google";
+import { IBM_Plex_Sans_Arabic, Almarai } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -16,20 +16,17 @@ const almarai = Almarai({
   variable: "--font-almarai",
 });
 
-const amiri = Amiri({
-  subsets: ["arabic"],
-  weight: ["400", "700"],
-  variable: "--font-amiri",
-});
-
 export const metadata = {
-  title: "مؤسسة المهند للرخام | Almohannad Marble",
+  title: "Almohannad Marble",
   description: "نجمع بين فخامة الطبيعة ودقة الإنجاز لنرتقي بمساحاتكم. أفضل أنواع الرخام والجرانيت.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ar" dir="rtl" className={`${ibmPlex.variable} ${almarai.variable} ${amiri.variable}`}>
+    <html lang="ar" dir="rtl" className={`${ibmPlex.variable} ${almarai.variable}`}>
       <body className="font-almarai bg-crema text-rich-black min-h-screen flex flex-col">
         <Navbar />
         {children}

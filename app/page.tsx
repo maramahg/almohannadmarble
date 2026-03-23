@@ -21,7 +21,7 @@ export default function Home() {
         </div>
 
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)]">
+          <h1 className="text-5xl md:text-8xl font-al-qassam text-white mb-6 drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)]">
             مؤسسة المهند للرخام
           </h1>
           <p className="text-xl md:text-2xl text-white mb-8 font-light drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
@@ -48,7 +48,7 @@ export default function Home() {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
-            <h2 className="text-3xl md:text-5xl font-bold text-gold-dark mb-8">
+            <h2 className="text-4xl md:text-6xl font-al-qassam text-gold-dark mb-8">
               من نحن؟
             </h2>
             <div className="space-y-6 text-stone-700 leading-relaxed text-lg text-justify">
@@ -95,7 +95,7 @@ export default function Home() {
 
         <div className="max-w-6xl mx-auto px-4 relative z-10 text-center">
           <div className="mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">خدماتنا وحلولنا المثالية</h2>
+            <h2 className="text-4xl md:text-6xl font-al-qassam mb-4">خدماتنا وحلولنا المثالية</h2>
             <div className="w-24 h-1 bg-gold mx-auto" />
             <p className="mt-6 text-stone-400 max-w-2xl mx-auto">
               نقدم حلولاً مثالية في الهندسة المعمارية والتصميمات الداخلية والخارجية الحديثة

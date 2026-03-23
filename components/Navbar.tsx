@@ -39,7 +39,7 @@ export default function Navbar() {
                             className="object-contain"
                         />
                     </div>
-                    <div className={`hidden md:block font-bold text-xl tracking-tight transition-all ${isScrolled ? "text-stone-900" : "text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+                    <div className={`hidden md:block font-al-qassam text-2xl tracking-tight transition-all ${isScrolled ? "text-stone-900" : "text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
                         }`}>
                         المهند <span className="text-gold">للرخام</span>
                     </div>
