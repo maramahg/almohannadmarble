@@ -1,28 +1,36 @@
 import type { Metadata } from "next";
-import { Cairo } from "next/font/google";
+import { IBM_Plex_Sans_Arabic, Almarai, Amiri } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const cairo = Cairo({
-  subsets: ["arabic", "latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-cairo",
+const ibmPlex = IBM_Plex_Sans_Arabic({
+  subsets: ["arabic"],
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-ibm",
 });
 
-export const metadata: Metadata = {
+const almarai = Almarai({
+  subsets: ["arabic"],
+  weight: ["300", "400", "700"],
+  variable: "--font-almarai",
+});
+
+const amiri = Amiri({
+  subsets: ["arabic"],
+  weight: ["400", "700"],
+  variable: "--font-amiri",
+});
+
+export const metadata = {
   title: "مؤسسة المهند للرخام | Almohannad Marble",
-  description: "المتخصصون في أجود أنواع الرخام والجرانيت والحجر الطبيعي",
+  description: "نجمع بين فخامة الطبيعة ودقة الإنجاز لنرتقي بمساحاتكم. أفضل أنواع الرخام والجرانيت.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }) {
   return (
-    <html lang="ar" dir="rtl" className={`${cairo.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans bg-stone-50 text-stone-900">
+    <html lang="ar" dir="rtl" className={`${ibmPlex.variable} ${almarai.variable} ${amiri.variable}`}>
+      <body className="font-almarai bg-crema text-rich-black min-h-screen flex flex-col">
         <Navbar />
         {children}
         <Footer />

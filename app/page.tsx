@@ -6,21 +6,25 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-black/40 z-10" />
           <Image
-            src="/hero-interior.jpg"
-            alt="Luxury Marble Interior"
+            src="/hero-stockcake.jpg"
+            alt="StockCake Marble Texture Swirls"
             fill
-            className="object-cover opacity-70 scale-110"
+            unoptimized={true}
+            quality={100}
+            className="object-cover opacity-100"
             priority
           />
+          {/* Sophisticated Overlays for Legibility */}
+          <div className="absolute inset-0 z-10 bg-gradient-to-b from-stone-900/40 via-transparent to-stone-900/10" />
+          <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,_rgba(0,0,0,0.3)_0%,_transparent_70%)]" />
         </div>
 
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
+          <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)]">
             مؤسسة المهند للرخام
           </h1>
-          <p className="text-xl md:text-2xl text-stone-200 mb-8 font-light drop-shadow-md">
+          <p className="text-xl md:text-2xl text-white mb-8 font-light drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
             نجمع بين فخامة الطبيعة ودقة الإنجاز لنرتقي بمساحاتكم
           </p>
           <div className="flex flex-wrap justify-center gap-4">

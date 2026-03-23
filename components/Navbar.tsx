@@ -39,7 +39,7 @@ export default function Navbar() {
                             className="object-contain"
                         />
                     </div>
-                    <div className={`hidden md:block font-bold text-xl tracking-tight transition-colors ${isScrolled ? "text-stone-900" : "text-white"
+                    <div className={`hidden md:block font-bold text-xl tracking-tight transition-all ${isScrolled ? "text-stone-900" : "text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
                         }`}>
                         المهند <span className="text-gold">للرخام</span>
                     </div>
@@ -51,7 +51,7 @@ export default function Navbar() {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className={`text-lg font-medium hover:text-gold transition-colors ${isScrolled ? "text-stone-700" : "text-stone-100"
+                            className={`text-lg font-medium hover:text-gold transition-all ${isScrolled ? "text-stone-700" : "text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
                                 }`}
                         >
                             {link.name}
