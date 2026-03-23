@@ -31,7 +31,7 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-3 group">
-                    <div className="relative w-12 h-12 bg-white rounded-full p-1 shadow-md group-hover:scale-110 transition-transform">
+                    <div className="relative w-12 h-12 bg-white rounded-full p-1 shadow-md group-hover:scale-110 transition-transform border border-stone-800/10">
                         <Image
                             src="/logo.png"
                             alt="شعار المهند للرخام"
@@ -39,9 +39,9 @@ export default function Navbar() {
                             className="object-contain"
                         />
                     </div>
-                    <div className={`hidden md:block font-al-qassam text-2xl tracking-tight transition-all ${isScrolled ? "text-stone-900" : "text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+                    <div className={`hidden md:block font-al-qassam text-2xl tracking-tight transition-all ${isScrolled ? "text-stone-900" : "text-white drop-shadow-[0_2px_15px_rgba(0,0,0,0.8)]"
                         }`}>
-                        المهند <span className="text-gold">للرخام</span>
+                        المهند <span className="text-gold-dark">للرخام</span>
                     </div>
                 </Link>
 

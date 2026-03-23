@@ -27,21 +27,16 @@ export default function Home() {
           <p className="text-xl md:text-2xl text-white mb-8 font-light drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
             نجمع بين فخامة الطبيعة ودقة الإنجاز لنرتقي بمساحاتكم
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 mt-16">
             <button className="btn-gold text-lg px-8 py-3">
               استكشف منتجاتنا
             </button>
-            <button className="glass text-white px-8 py-3 rounded-sm border-white/40 hover:bg-white/10 transition-all text-lg">
+            <button className="bg-gold text-dark-brown px-8 py-3 rounded-none hover:bg-dark-brown hover:text-gold transition-all text-lg font-bold">
               تواصل معنا
             </button>
           </div>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-1">
-            <div className="w-1 h-2 bg-white rounded-full" />
-          </div>
-        </div>
       </section>
 
       {/* Who Are We Section */}
@@ -77,7 +72,7 @@ export default function Home() {
 
           <div className="order-1 md:order-2 relative aspect-square">
             <div className="absolute inset-0 border-2 border-gold translate-x-4 translate-y-4 z-0" />
-            <div className="absolute inset-0 bg-stone-200 z-10 overflow-hidden shadow-2xl">
+            <div className="absolute inset-0 bg-stone-200 z-10 overflow-hidden shadow-2xl border border-stone-800/10">
               <Image
                 src="/about-marble.jpg"
                 alt="مصنع الرخام"
@@ -109,7 +104,7 @@ export default function Home() {
               { title: "مغاسل", icon: "🚿" },
               { title: "تكسيات", icon: "🧱" },
             ].map((service, i) => (
-              <div key={i} className="p-8 glass hover:bg-white/10 transition-all group cursor-pointer border-none shadow-xl">
+              <div key={i} className="p-8 glass hover:bg-white/10 transition-all group cursor-pointer border border-stone-800/20 shadow-xl">
                 <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
                 <h3 className="text-xl font-bold text-gold">{service.title}</h3>
               </div>

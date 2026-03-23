@@ -3,10 +3,12 @@
 :root {
   --background: #f9f8f6;
   --foreground: #1a1a1a;
-  --gold: #BFA37C;
-  --gold-dark: #8E734B;
+  --gold: #A68B6A;
+  --gold-dark: #6D5537;
   --deep-red: #800000;
   --deep-red-dark: #5a0000;
+  --stone-dark: #2D2722;
+  --dark-brown: #3D2B1F;
 }
 
 @theme inline {
@@ -16,6 +18,8 @@
   --color-gold-dark: var(--gold-dark);
   --color-deep-red: var(--deep-red);
   --color-deep-red-dark: var(--deep-red-dark);
+  --color-stone-dark: var(--stone-dark);
+  --color-dark-brown: var(--dark-brown);
   --font-ibm: var(--font-ibm);
   --font-almarai: var(--font-almarai);
   --font-al-qassam: var(--font-al-qassam);
@@ -67,6 +71,6 @@
 
 @layer components {
   .btn-gold {
-    @apply bg-gold text-white px-6 py-2 rounded-sm transition-all hover:bg-gold-dark active:scale-95 font-medium;
+    @apply bg-dark-brown text-gold px-8 py-3 rounded-none transition-all hover:bg-gold hover:text-stone-950 active:scale-95 font-bold shadow-xl shadow-black/20 border border-gold/40 text-center inline-flex items-center justify-center;
   }
 }
