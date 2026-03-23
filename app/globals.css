@@ -1,26 +1,40 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f9f8f6;
+  --foreground: #1a1a1a;
+  --gold: #d4af37;
+  --gold-dark: #b8860b;
+  --deep-red: #800000;
+  --deep-red-dark: #5a0000;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-gold: var(--gold);
+  --color-gold-dark: var(--gold-dark);
+  --color-deep-red: var(--deep-red);
+  --color-deep-red-dark: var(--deep-red-dark);
+  --font-sans: var(--font-cairo), ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .btn-gold {
+    @apply bg-gold text-white px-6 py-2 rounded-sm transition-all hover:bg-gold-dark active:scale-95 font-medium;
+  }
+
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+
+  .marble-gradient {
+    @apply bg-gradient-to-br from-white via-zinc-50 to-zinc-100;
+  }
 }
