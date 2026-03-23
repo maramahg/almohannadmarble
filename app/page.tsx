@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { LayoutGrid, Utensils, Bath, Layers } from "lucide-react";
 
 export default function Home() {
   return (
@@ -40,13 +41,13 @@ export default function Home() {
       </section>
 
       {/* Who Are We Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-16 md:py-24 px-4 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
-            <h2 className="text-4xl md:text-6xl font-al-qassam text-gold-dark mb-8">
+            <h2 className="text-3xl md:text-5xl lg:text-7xl font-al-qassam text-gold-dark mb-8 leading-tight">
               من نحن؟
             </h2>
-            <div className="space-y-6 text-stone-700 leading-relaxed text-lg text-justify">
+            <div className="space-y-6 text-stone-700 leading-relaxed text-base md:text-lg text-justify">
               <p>
                 في مؤسسة المهند للرخام، نفخر بتقديم منتجات استثنائية من الرخام والجرانيت الطبيعي. منتجاتنا تلفت الانتباه وهي مقصد لكل ذوّاق أنيق.
               </p>
@@ -54,24 +55,24 @@ export default function Home() {
                 ما يميزنا هو موظفونا الذين يبذلون جهوداً لضمان ظهور أفكارك. شغفنا وإصرارنا لا مثيل لهما، وحبنا للروائع الطبيعية ما يجعلنا نتعمق في البحث عن أفضل أنواع الرخام والجرانيت لتلبية جميع الاحتياجات والرغبات.
               </p>
             </div>
-            <div className="mt-10 flex gap-8">
+            <div className="mt-10 grid grid-cols-3 gap-4 md:flex md:gap-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-gold italic">+10</div>
-                <div className="text-sm text-stone-500">سنوات خبرة</div>
+                <div className="text-2xl md:text-3xl font-bold font-ibm text-gold">+10</div>
+                <div className="text-[10px] md:text-sm text-stone-500 uppercase tracking-tighter">سنوات خبرة</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gold italic">+50</div>
-                <div className="text-sm text-stone-500">نوع رخام</div>
+                <div className="text-2xl md:text-3xl font-bold font-ibm text-gold">+50</div>
+                <div className="text-[10px] md:text-sm text-stone-500 uppercase tracking-tighter">نوع رخام</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gold italic">+100</div>
-                <div className="text-sm text-stone-500">مشروع ناجح</div>
+                <div className="text-2xl md:text-3xl font-bold font-ibm text-gold">+100</div>
+                <div className="text-[10px] md:text-sm text-stone-500 uppercase tracking-tighter">مشروع ناجح</div>
               </div>
             </div>
           </div>
 
-          <div className="order-1 md:order-2 relative aspect-square">
-            <div className="absolute inset-0 border-2 border-gold translate-x-4 translate-y-4 z-0" />
+          <div className="order-1 md:order-2 relative aspect-square max-w-md mx-auto md:max-w-none w-full">
+            <div className="absolute inset-0 border-2 border-gold translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4 z-0" />
             <div className="absolute inset-0 bg-stone-200 z-10 overflow-hidden shadow-2xl border border-stone-800/10">
               <Image
                 src="/about-marble.jpg"
@@ -85,28 +86,28 @@ export default function Home() {
       </section>
 
       {/* Services/Specs Highlight */}
-      <section className="py-20 bg-stone-900 text-white overflow-hidden relative">
+      <section id="services" className="py-16 md:py-24 bg-stone-900 text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-3xl -translate-y-1/2 translate-x-1/2" />
 
         <div className="max-w-6xl mx-auto px-4 relative z-10 text-center">
-          <div className="mb-16">
-            <h2 className="text-4xl md:text-6xl font-al-qassam mb-4">خدماتنا وحلولنا المثالية</h2>
-            <div className="w-24 h-1 bg-gold mx-auto" />
-            <p className="mt-6 text-stone-400 max-w-2xl mx-auto">
+          <div className="mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-5xl lg:text-7xl font-al-qassam mb-4">خدماتنا وحلولنا المثالية</h2>
+            <div className="w-20 h-1 bg-gold mx-auto" />
+            <p className="mt-6 text-stone-400 text-sm md:text-base max-w-2xl mx-auto">
               نقدم حلولاً مثالية في الهندسة المعمارية والتصميمات الداخلية والخارجية الحديثة
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
-              { title: "أرضيات", icon: "🏢" },
-              { title: "مطابخ", icon: "🍽️" },
-              { title: "مغاسل", icon: "🚿" },
-              { title: "تكسيات", icon: "🧱" },
+              { title: "أرضيات", icon: <LayoutGrid className="w-10 h-10 md:w-12 md:h-12" /> },
+              { title: "مطابخ", icon: <Utensils className="w-10 h-10 md:w-12 md:h-12" /> },
+              { title: "مغاسل", icon: <Bath className="w-10 h-10 md:w-12 md:h-12" /> },
+              { title: "تكسيات", icon: <Layers className="w-10 h-10 md:w-12 md:h-12" /> },
             ].map((service, i) => (
-              <div key={i} className="p-8 glass hover:bg-white/10 transition-all group cursor-pointer border border-stone-800/20 shadow-xl">
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
-                <h3 className="text-xl font-bold text-gold">{service.title}</h3>
+              <div key={i} className="p-8 md:p-10 glass hover:bg-white/10 transition-all group cursor-pointer border border-stone-800/20 shadow-xl flex flex-col items-center">
+                <div className="mb-4 md:mb-6 text-gold group-hover:scale-110 transition-transform">{service.icon}</div>
+                <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-gold transition-colors">{service.title}</h3>
               </div>
             ))}
           </div>
