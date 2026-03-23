@@ -31,9 +31,9 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-3 group">
-                    <div className="relative w-12 h-12 bg-white rounded-full p-1 shadow-md group-hover:scale-110 transition-transform border border-stone-800/10">
+                    <div className="relative w-12 h-12 bg-white rounded-full p-0 shadow-md group-hover:scale-110 transition-transform border-2 border-stone-800 overflow-hidden">
                         <Image
-                            src="/logo.png"
+                            src="/logo-final.png"
                             alt="شعار المهند للرخام"
                             fill
                             className="object-contain"

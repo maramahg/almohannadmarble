@@ -20,7 +20,7 @@ export const metadata = {
   title: "Almohannad Marble",
   description: "نجمع بين فخامة الطبيعة ودقة الإنجاز لنرتقي بمساحاتكم. أفضل أنواع الرخام والجرانيت.",
   icons: {
-    icon: "/icon.png",
+    icon: "/favicon-branded.svg?v=6",
   },
 };
 
