@@ -85,10 +85,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services/Specs Highlight */}
+      {/* Services Section */}
       <section id="services" className="py-16 md:py-24 bg-stone-900 text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-3xl -translate-y-1/2 translate-x-1/2" />
-
         <div className="max-w-6xl mx-auto px-4 relative z-10 text-center">
           <div className="mb-12 md:mb-16">
             <h2 className="text-3xl md:text-5xl lg:text-7xl font-al-qassam mb-4">خدماتنا وحلولنا المثالية</h2>
@@ -98,21 +96,29 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {[
-              { title: "أرضيات", icon: <LayoutGrid className="w-10 h-10 md:w-12 md:h-12" /> },
-              { title: "مطابخ", icon: <Utensils className="w-10 h-10 md:w-12 md:h-12" /> },
-              { title: "مغاسل", icon: <Bath className="w-10 h-10 md:w-12 md:h-12" /> },
-              { title: "تكسيات", icon: <Layers className="w-10 h-10 md:w-12 md:h-12" /> },
+              { title: "أرضيات", icon: <LayoutGrid className="w-12 h-12" />, desc: "تصاميم أرضيات فريدة تعكس الفخامة" },
+              { title: "مطابخ", icon: <Utensils className="w-12 h-12" />, desc: "أسطح مطابخ مقاومة وعصرية" },
+              { title: "مغاسل", icon: <Bath className="w-12 h-12" />, desc: "لمسات فنية في دورات المياه" },
+              { title: "تكسيات", icon: <Layers className="w-12 h-12" />, desc: "تكسيات جدارية داخلية وخارجية" },
             ].map((service, i) => (
-              <div key={i} className="p-8 md:p-10 glass hover:bg-white/10 transition-all group cursor-pointer border border-stone-800/20 shadow-xl flex flex-col items-center">
-                <div className="mb-4 md:mb-6 text-gold group-hover:scale-110 transition-transform">{service.icon}</div>
-                <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-gold transition-colors">{service.title}</h3>
+              <div key={i} className="p-8 md:p-10 bg-stone-950/60 hover:bg-stone-950/80 transition-all duration-300 group cursor-pointer border border-stone-800 flex flex-col items-center text-center">
+                <div className="mb-4 text-gold group-hover:scale-110 transition-transform duration-300">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl md:text-2xl font-ibm font-semibold text-white">
+                  {service.title}
+                </h3>
+                <p className="text-stone-500 text-xs mt-2 leading-relaxed">
+                  {service.desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
     </main>
   );
 }

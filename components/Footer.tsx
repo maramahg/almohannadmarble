@@ -16,7 +16,7 @@ const TikTokLogo = () => (
 
 export default function Footer() {
     return (
-        <footer className="bg-stone-950 text-stone-300 pt-20 pb-10 px-4">
+        <footer className="bg-stone-950 text-stone-300 pt-20 pb-10 px-4 border-t border-gold/10">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-stone-800 pb-16">
                 {/* Brand Column */}
                 <div className="md:col-span-2 space-y-6">
