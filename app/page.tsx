@@ -44,9 +44,12 @@ export default function Home() {
       <section className="py-16 md:py-24 px-4 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
-            <h2 className="text-3xl md:text-5xl lg:text-7xl font-al-qassam text-gold-dark mb-8 leading-tight">
-              من نحن؟
-            </h2>
+            <div className="mb-10">
+              <h2 className="text-4xl md:text-6xl lg:text-8xl font-al-qassam text-stone-950 leading-tight mb-2">
+                من نحن؟
+              </h2>
+              <div className="w-24 h-1 bg-gold" />
+            </div>
             <div className="space-y-6 text-stone-700 leading-relaxed text-base md:text-lg text-justify">
               <p>
                 في مؤسسة المهند للرخام، نفخر بتقديم منتجات استثنائية من الرخام والجرانيت الطبيعي. منتجاتنا تلفت الانتباه وهي مقصد لكل ذوّاق أنيق.
@@ -89,8 +92,10 @@ export default function Home() {
       <section id="services" className="py-16 md:py-24 bg-stone-900 text-white overflow-hidden relative">
         <div className="max-w-6xl mx-auto px-4 relative z-10 text-center">
           <div className="mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-5xl lg:text-7xl font-al-qassam mb-4">خدماتنا وحلولنا المثالية</h2>
-            <div className="w-20 h-1 bg-gold mx-auto" />
+            <div className="w-fit mx-auto">
+              <h2 className="text-3xl md:text-5xl lg:text-7xl font-al-qassam mb-4">خدماتنا وحلولنا المثالية</h2>
+              <div className="w-full h-1 bg-gold" />
+            </div>
             <p className="mt-6 text-stone-400 text-sm md:text-base max-w-2xl mx-auto">
               نقدم حلولاً مثالية في الهندسة المعمارية والتصميمات الداخلية والخارجية الحديثة
             </p>
