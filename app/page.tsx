@@ -44,11 +44,11 @@ export default function Home() {
       <section className="py-16 md:py-24 px-4 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
-            <div className="mb-10">
-              <h2 className="text-4xl md:text-6xl lg:text-8xl font-al-qassam text-stone-950 leading-tight mb-2">
+            <div className="mb-10 w-fit">
+              <h2 className="text-3xl md:text-5xl lg:text-7xl font-al-qassam text-stone-800 leading-tight mb-2">
                 من نحن؟
               </h2>
-              <div className="w-24 h-1 bg-gold" />
+              <div className="w-full h-1 bg-gold" />
             </div>
             <div className="space-y-6 text-stone-700 leading-relaxed text-base md:text-lg text-justify">
               <p>
