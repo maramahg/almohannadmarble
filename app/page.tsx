@@ -52,7 +52,7 @@ export default function Home() {
             </div>
             <div className="space-y-6 text-stone-700 leading-relaxed text-base md:text-lg text-justify">
               <p>
-                <span className="font-bold text-stone-950 text-xl md:text-2xl block mb-2">في مؤسسة المهند للرخام،</span>
+                <span className="font-black text-stone-950 text-xl md:text-2xl block mb-2">في مؤسسة المهند للرخام،</span>
                 نفخر بتقديم منتجات استثنائية من الرخام والجرانيت الطبيعي. منتجاتنا تلفت الانتباه وهي مقصد لكل ذوّاق أنيق.
               </p>
               <p>
