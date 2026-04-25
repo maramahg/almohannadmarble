@@ -48,7 +48,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-5xl lg:text-7xl font-al-qassam text-stone-800 leading-tight mb-2">
                 من نحن؟
               </h2>
-              <div className="w-full h-1 bg-gold" />
+              <div className="w-[90%] h-1 bg-gold mx-auto" />
             </div>
             <div className="space-y-6 text-stone-700 leading-relaxed text-base md:text-lg text-justify">
               <p>
@@ -94,7 +94,7 @@ export default function Home() {
           <div className="mb-12 md:mb-16">
             <div className="w-fit mx-auto">
               <h2 className="text-3xl md:text-5xl lg:text-7xl font-al-qassam mb-4">خدماتنا وحلولنا المثالية</h2>
-              <div className="w-full h-1 bg-gold" />
+              <div className="w-[90%] h-1 bg-gold mx-auto" />
             </div>
             <p className="mt-6 text-stone-400 text-sm md:text-base max-w-2xl mx-auto">
               نقدم حلولاً مثالية في الهندسة المعمارية والتصميمات الداخلية والخارجية الحديثة
