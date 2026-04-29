@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Building2, Briefcase, MapPin } from "lucide-react";
 
 const clients = [
@@ -82,9 +83,9 @@ export default function ProjectsPage() {
             >
               {/* Gold Accent Corner */}
               <div className="absolute top-0 right-0 w-16 h-16 bg-gold/5 -mr-8 -mt-8 rotate-45 group-hover:bg-gold/10 transition-all" />
-              
+
               {/* Logo Area */}
-              <div className="mb-8 w-36 h-36 bg-stone-50 border border-stone-100 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500 p-0 overflow-hidden">
+              <div className="mb-8 w-36 h-36 bg-stone-50 border border-stone-100 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500 p-0 overflow-hidden mx-auto md:mx-0">
                 {(client as any).logo ? (
                   <div className="relative w-full h-full">
                     <Image
@@ -101,12 +102,12 @@ export default function ProjectsPage() {
               </div>
 
               {/* Content */}
-              <div className="flex-grow">
+              <div className="flex-grow text-center md:text-right">
                 <h3 className="text-2xl font-ibm font-bold text-stone-800 mb-4 group-hover:text-gold-dark transition-colors">
                   {client.name}
                 </h3>
-                
-                <div className="flex items-center gap-4 text-xs text-stone-500 mb-4 font-ibm tracking-wide">
+
+                <div className="flex items-center justify-center md:justify-start gap-4 text-xs text-stone-500 mb-4 font-ibm tracking-wide">
                   <span className="flex items-center gap-1">
                     <Briefcase className="w-3 h-3" />
                     {client.workType}
@@ -118,7 +119,7 @@ export default function ProjectsPage() {
                   </span>
                 </div>
 
-                <p className="text-stone-600 leading-relaxed text-sm md:text-base text-justify">
+                <p className="text-stone-600 leading-relaxed text-sm md:text-base text-center md:text-justify">
                   {client.description}
                 </p>
               </div>
@@ -132,9 +133,9 @@ export default function ProjectsPage() {
           <p className="text-stone-600 mb-8 max-w-xl mx-auto">
             نحن هنا لنحول رؤيتك إلى واقع ملموس بأرقى أنواع الرخام والجرانيت. تواصل معنا اليوم لبدء مشروعك القادم.
           </p>
-          <button className="btn-gold px-10 py-4">
-            اطلب عرض سعر الآن
-          </button>
+          <Link href="https://wa.me/966539400846" target="_blank" className="btn-gold px-10 py-4">
+            تواصل معنا للبدء
+          </Link>
         </div>
       </div>
     </main>

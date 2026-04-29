@@ -46,7 +46,8 @@ export default function Footer() {
                     <ul className="space-y-4 text-lg">
                         <li><Link href="/" className="hover:text-gold transition-colors">الرئيسية</Link></li>
                         <li><Link href="/projects" className="hover:text-gold transition-colors">مشاريعنا</Link></li>
-                        <li><Link href="/contact" className="hover:text-gold transition-colors">اتصل بنا</Link></li>
+                        <li><Link href="/collection" className="hover:text-gold transition-colors">مجموعتنا</Link></li>
+                        <li><Link href="https://wa.me/966539400846" target="_blank" className="hover:text-gold transition-colors">اتصل بنا</Link></li>
                     </ul>
                 </div>
 

@@ -50,7 +50,7 @@ export default function Navbar() {
     const navLinks = [
         { name: "الرئيسية", href: "/" },
         { name: "مشاريعنا", href: "/projects" },
-        { name: "خدماتنا", href: "/services" },
+        { name: "مجموعتنا", href: "/collection" },
     ];
 
     return (

@@ -95,7 +95,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 relative z-10 text-center">
           <div className="mb-12 md:mb-16">
             <div className="w-fit mx-auto">
-              <h2 className="text-3xl md:text-5xl lg:text-7xl font-al-qassam mb-4">خدماتنا وحلولنا المثالية</h2>
+              <h2 className="text-3xl md:text-5xl lg:text-7xl font-al-qassam mb-4">مجموعتنا وحلولنا المتميزة</h2>
               <div className="w-[90%] h-1 bg-gold mx-auto" />
             </div>
             <p className="mt-6 text-stone-400 text-sm md:text-base max-w-2xl mx-auto">
