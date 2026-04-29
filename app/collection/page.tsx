@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Droplet, Box, Hammer, MapPin, ArrowLeft } from "lucide-react";
+import { Droplet, Box, Hammer, ArrowLeft } from "lucide-react";
 
 const samples = [
   {
     name: "Maikel Angelo",
+    image: "https://almohannad.s3.eu-north-1.amazonaws.com/maikel.png",
     origin: "إيطاليا",
-    description: "رخام إيطالي فاخر يتميز بعروقه الرمادية والذهبية المتداخلة على خلفية بيضاء نقية، مثالي للأرضيات والجدران الراقية.",
+    description: "رخام فاخر يتميز بتشكيلات عروق فنية فريدة، يضفي لمسة إبداعية استثنائية على المساحات المعمارية.",
     specs: {
       compressiveStrength: "2620 KG/CM2",
       bulkDensity: "2200 KG/M",
@@ -15,8 +16,9 @@ const samples = [
   },
   {
     name: "Calacatta",
+    image: "https://almohannad.s3.eu-north-1.amazonaws.com/calacatta.png",
     origin: "إيطاليا",
-    description: "من أرقى أنواع الرخام العالمي، يتميز بعروقه الواسعة والجريئة، يضفي لمسة من الفخامة والاتساع على المساحات الداخلية.",
+    description: "من أرقى أنواع الرخام الإيطالي، يتميز بخلفية بيضاء ناصعة وعروق جريئة تمنح المكان فخامة لا تضاهى.",
     specs: {
       compressiveStrength: "1610 KG/CM",
       bulkDensity: "2669 KG/M",
@@ -24,43 +26,113 @@ const samples = [
     }
   },
   {
-    name: "Statuary",
+    name: "Statuario",
+    image: "https://almohannad.s3.eu-north-1.amazonaws.com/Statuario.png",
     origin: "إيطاليا",
-    description: "رخام كلاسيكي عالي الجودة، معروف بسطحه الأملس وعروقه الرقيقة، المفضل لدى المصممين للمشاريع المعمارية الكبرى.",
+    description: "رخام كلاسيكي عالي القيمة، يشتهر بجماله الخالد وعروقه الرمادية المتناسقة التي تناسب أرقى التصاميم.",
     specs: {
-      compressiveStrength: "2100 KG/CM2",
-      bulkDensity: "2710 KG/M",
-      waterAbsorption: "0.15%",
+      compressiveStrength: "1209 KG/CM",
+      bulkDensity: "2700 KG/M",
+      waterAbsorption: "0.16%",
     }
   },
   {
-    name: "Crema Marfil",
-    origin: "إسبانيا",
-    description: "رخام كريمي دافئ يمنح شعوراً بالراحة والهدوء، يتناسب مع مختلف أنواع الديكورات المودرن والكلاسيكية.",
+    name: "Bianco Sevic",
+    image: "https://almohannad.s3.eu-north-1.amazonaws.com/Bianco+Sevic.png",
+    origin: "مقدونيا",
+    description: "يتميز بلونه الأبيض الهادئ والمتجانس، وهو خيار مثالي للمشاريع التي تبحث عن الأناقة العصرية والبساطة.",
     specs: {
-      compressiveStrength: "1850 KG/CM2",
-      bulkDensity: "2680 KG/M",
+      compressiveStrength: "1408 KG/CM",
+      bulkDensity: "2795 KG/M",
+      waterAbsorption: "0.23%",
+    }
+  },
+  {
+    name: "Greek Crystal",
+    image: "https://almohannad.s3.eu-north-1.amazonaws.com/Greek+Crystal.png",
+    origin: "اليونان",
+    description: "رخام كريستالي يتمتع بلمعان طبيعي وجاذبية خاصة، يعكس الضوء بشكل رائع ويمنح المكان حيوية وإشراقاً.",
+    specs: {
+      compressiveStrength: "1855 KG/CM",
+      bulkDensity: "2714 KG/M",
+      waterAbsorption: "0.2%",
+    }
+  },
+  {
+    name: "Greece Venus",
+    image: "https://almohannad.s3.eu-north-1.amazonaws.com/Greece+Venus.png",
+    origin: "اليونان",
+    description: "رخام يوناني بلمسات جمالية رقيقة، يجمع بين القوة والمتانة مع مظهر ناعم يليق بالقصور والفلل الفاخرة.",
+    specs: {
+      compressiveStrength: "1937 KG/CM",
+      bulkDensity: "2840 KG/M",
       waterAbsorption: "0.3%",
     }
   },
   {
-    name: "Emperador Dark",
-    origin: "إسبانيا",
-    description: "رخام بني داكن بعروق بيضاء متقاطعة، يجسد القوة والفخامة، رائع للتصاميم التي تتطلب تبايناً لونياً جذاباً.",
+    name: "Bianco White",
+    image: "https://almohannad.s3.eu-north-1.amazonaws.com/Bianco+White.png",
+    origin: "تركيا",
+    description: "رخام تركي أبيض نقي، يوفر خلفية مثالية لمختلف أنواع الديكورات، ويتميز بخصائص فيزيائية ممتازة.",
     specs: {
-      compressiveStrength: "1980 KG/CM2",
-      bulkDensity: "2730 KG/M",
-      waterAbsorption: "0.25%",
+      compressiveStrength: "1295 KG/CM",
+      bulkDensity: "2710 KG/M",
+      waterAbsorption: "0.1%",
     }
   },
   {
-    name: "Volakas",
-    origin: "اليونان",
-    description: "رخام يوناني أبيض ناعم مع عروق رمادية هادئة، يجمع بين البساطة والأناقة، مثالي للحمامات والمطابخ العصرية.",
+    name: "Aqua Bianca",
+    image: "https://almohannad.s3.eu-north-1.amazonaws.com/Aqua+Bianca.png",
+    origin: "إيطاليا",
+    description: "رخام إيطالي فريد يجمع بين النقاء والقوة، يتميز بنمط عروق هادئ يبعث على الراحة والسكينة.",
     specs: {
-      compressiveStrength: "1550 KG/CM2",
-      bulkDensity: "2820 KG/M",
-      waterAbsorption: "0.35%",
+      compressiveStrength: "1947 KG/CM",
+      bulkDensity: "2669 KG/M",
+      waterAbsorption: "1.79%",
+    }
+  },
+  {
+    name: "Kamal Basha",
+    image: "https://almohannad.s3.eu-north-1.amazonaws.com/Kamal+Basha.png",
+    origin: "تركيا",
+    description: "رخام تركي عريق يتمتع بشهرة واسعة لمتانته العالية وألوانه الدافئة التي تضفي حميمية على التصاميم.",
+    specs: {
+      compressiveStrength: "1610 KG/CM",
+      bulkDensity: "2669 KG/M",
+      waterAbsorption: "0.4%",
+    }
+  },
+  {
+    name: "Tundra Gray",
+    image: "https://almohannad.s3.eu-north-1.amazonaws.com/Tundra+Gray.png",
+    origin: "تركيا",
+    description: "رخام رمادي عصري للغاية، يحظى بشعبية كبيرة في التصاميم الحديثة بفضل لونه المحايد وعروقه الجذابة.",
+    specs: {
+      compressiveStrength: "1610 KG/CM",
+      bulkDensity: "2669 KG/M",
+      waterAbsorption: "0.4%",
+    }
+  },
+  {
+    name: "Crema Marfil",
+    image: "https://almohannad.s3.eu-north-1.amazonaws.com/Crema+Marfil.png",
+    origin: "إسبانيا",
+    description: "أشهر أنواع الرخام الكريمي في العالم، يوفر دفئاً طبيعياً ويتماشى بانسجام مع الأثاث الخشبي والمعدني.",
+    specs: {
+      compressiveStrength: "1624 KG/CM",
+      bulkDensity: "2671 KG/M",
+      waterAbsorption: "0.2%",
+    }
+  },
+  {
+    name: "Travertine",
+    image: "https://almohannad.s3.eu-north-1.amazonaws.com/Travertine.png",
+    origin: "تركيا",
+    description: "حجر طبيعي كلاسيكي يمتاز بمساميته الجمالية وتنوع ألوانه، مثالي للتكسيات الخارجية والأرضيات الخارجية.",
+    specs: {
+      compressiveStrength: "2440 KG/CM",
+      bulkDensity: "2550 KG/M",
+      waterAbsorption: "0.32%",
     }
   }
 ];
@@ -101,10 +173,19 @@ export default function CollectionPage() {
             >
               {/* Image Container */}
               <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
-                {/* Placeholder Image Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center bg-stone-200/50">
-                  <span className="text-stone-400 font-ibm text-sm">MARBLE TEXTURE PREVIEW</span>
-                </div>
+                {sample.image ? (
+                  <Image 
+                    src={sample.image}
+                    alt={sample.name}
+                    fill
+                    className="object-cover scale-[1.15] transition-transform duration-700"
+                  />
+                ) : (
+                  /* Placeholder Image Overlay */
+                  <div className="absolute inset-0 flex items-center justify-center bg-stone-200/50">
+                    <span className="text-stone-400 font-ibm text-sm">MARBLE TEXTURE PREVIEW</span>
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute top-4 right-4 bg-stone-900/80 backdrop-blur-md text-white text-[10px] px-3 py-1 uppercase tracking-widest font-ibm z-10">
                   {sample.origin}
@@ -147,27 +228,21 @@ export default function CollectionPage() {
                     <span className="text-stone-700 font-bold">{sample.specs.waterAbsorption}</span>
                   </div>
                 </div>
-
-                <Link 
-                  href="https://wa.me/966539400846" 
-                  target="_blank"
-                  className="mt-8 py-3 border border-stone-800 text-stone-800 font-ibm text-xs uppercase tracking-widest text-center hover:bg-stone-900 hover:text-white transition-all duration-300"
-                >
-                  Request Sample Details
-                </Link>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Back to Home CTA */}
-        <div className="mt-20 text-center">
-          <Link 
-            href="/"
-            className="inline-flex items-center gap-2 text-stone-400 hover:text-gold transition-colors font-ibm text-sm uppercase tracking-widest"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Home
+        {/* CTA Section */}
+        <div className="mt-24 text-center p-12 glass-gold border border-gold/10 dark-section">
+          <h2 className="text-2xl md:text-3xl font-al-qassam text-stone-800 mb-6">
+            هل تبحث عن خامة محددة لمشروعك؟
+          </h2>
+          <p className="text-stone-600 mb-8 max-w-xl mx-auto">
+            فريقنا المتخصص مستعد لمساعدتك في اختيار أجود أنواع الرخام التي تناسب ذوقك واحتياجاتك المعمارية. تواصل معنا اليوم لبدء رحلة التميز.
+          </p>
+          <Link href="https://wa.me/966539400846" target="_blank" className="btn-gold px-10 py-4">
+            تواصل معنا للبدء
           </Link>
         </div>
       </div>
