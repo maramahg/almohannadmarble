@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { LayoutGrid, Utensils, Bath, Layers } from "lucide-react";
 
 export default function Home() {
@@ -29,12 +30,12 @@ export default function Home() {
             نجمع بين فخامة الطبيعة ودقة الإنجاز لنرتقي بمساحاتكم
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-16">
-            <button className="btn-gold text-lg px-8 py-3">
+            <Link href="/projects" className="btn-gold text-lg px-8 py-3">
               استكشف مشاريعنا
-            </button>
-            <button className="bg-gold text-dark-brown px-8 py-3 rounded-none hover:bg-dark-brown hover:text-gold transition-all text-lg font-bold">
+            </Link>
+            <Link href="https://wa.me/966539400846" target="_blank" className="bg-gold text-dark-brown px-8 py-3 rounded-none hover:bg-dark-brown hover:text-gold transition-all text-lg font-bold">
               تواصل معنا
-            </button>
+            </Link>
           </div>
         </div>
 
