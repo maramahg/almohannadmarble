@@ -4,11 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isOverDark, setIsOverDark] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -53,6 +55,17 @@ export default function Navbar() {
         { name: "مجموعتنا", href: "/collection" },
     ];
 
+    const getLinkStyles = (href: string) => {
+        const isActive = pathname === href;
+        const isLightBg = (isScrolled && !isOverDark) || (!isScrolled && !isOverDark);
+        const baseColor = isLightBg ? "text-stone-800" : "text-white";
+        const shadow = !isScrolled && isOverDark ? "drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]" : "";
+        
+        return `text-lg font-medium transition-all relative py-1 hover:text-gold 
+            ${isActive ? "text-gold" : baseColor} 
+            ${shadow}`;
+    };
+
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isMenuOpen ? "bg-stone-900 shadow-lg py-3" : isScrolled ? "glass shadow-lg py-3" : "bg-transparent py-6"
@@ -69,8 +82,8 @@ export default function Navbar() {
                             className="object-contain"
                         />
                     </div>
-                    <div className={`font-al-qassam text-xl md:text-2xl tracking-tight transition-all ${(isScrolled && !isOverDark) || isMenuOpen ? "text-stone-900" : "text-white"
-                        } ${!isScrolled && !isMenuOpen ? "drop-shadow-[0_2px_15px_rgba(0,0,0,0.8)]" : ""}`}>
+                    <div className={`font-al-qassam text-xl md:text-2xl tracking-tight transition-all ${isOverDark || isMenuOpen ? "text-white" : "text-stone-900"
+                        } ${!isScrolled && isOverDark ? "drop-shadow-[0_2px_15px_rgba(0,0,0,0.8)]" : ""}`}>
                         المهند <span className="text-gold-dark">للرخام</span>
                     </div>
                 </Link>
@@ -81,15 +94,20 @@ export default function Navbar() {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className={`text-lg font-medium hover:text-gold transition-all ${isScrolled && !isOverDark ? "text-stone-700" : "text-white"
-                                } ${!isScrolled ? "drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]" : ""}`}
+                            className={getLinkStyles(link.href)}
                         >
                             {link.name}
+                            {pathname === link.href && (
+                                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold" />
+                            )}
                         </Link>
                     ))}
-                    <button className="btn-gold shadow-gold/20 shadow-lg">
-                        اتصل بنا
-                    </button>
+                    <Link 
+                        href="/contact" 
+                        className={`btn-gold shadow-gold/20 shadow-lg ${pathname === "/contact" ? "bg-gold text-stone-950 border-stone-800" : ""}`}
+                    >
+                        تواصل معنا
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Icon */}
@@ -97,9 +115,9 @@ export default function Navbar() {
                     className={`md:hidden p-2 z-50 pointer-events-auto transition-all ${
                         isMenuOpen 
                             ? "text-gold" 
-                            : isScrolled && !isOverDark 
-                                ? "text-stone-900" 
-                                : "text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
+                            : isOverDark 
+                                ? "text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]" 
+                                : "text-stone-900"
                     }`}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     aria-label="Toggle Menu"
@@ -116,14 +134,18 @@ export default function Navbar() {
                             key={link.name}
                             href={link.href}
                             onClick={() => setIsMenuOpen(false)}
-                            className="text-white hover:text-gold transition-colors"
+                            className={`transition-colors ${pathname === link.href ? "text-gold" : "text-white hover:text-gold"}`}
                         >
                             {link.name}
                         </Link>
                     ))}
-                    <button className="btn-gold px-12 py-4 mt-4" onClick={() => setIsMenuOpen(false)}>
-                        اتصل بنا
-                    </button>
+                    <Link 
+                        href="/contact" 
+                        className={`btn-gold px-12 py-4 mt-4 ${pathname === "/contact" ? "bg-gold text-stone-950 border-stone-800" : ""}`} 
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        تواصل معنا
+                    </Link>
                 </div>
             </div>
         </nav>

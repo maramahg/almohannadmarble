@@ -47,7 +47,7 @@ export default function Footer() {
                         <li><Link href="/" className="hover:text-gold transition-colors">الرئيسية</Link></li>
                         <li><Link href="/projects" className="hover:text-gold transition-colors">مشاريعنا</Link></li>
                         <li><Link href="/collection" className="hover:text-gold transition-colors">مجموعتنا</Link></li>
-                        <li><Link href="https://wa.me/966539400846" target="_blank" className="hover:text-gold transition-colors">اتصل بنا</Link></li>
+                        <li><Link href="/contact" className="hover:text-gold transition-colors">تواصل معنا</Link></li>
                     </ul>
                 </div>
 
@@ -91,10 +91,6 @@ export default function Footer() {
 
             <div className="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-stone-500">
                 <p>© {new Date().getFullYear()} جميع الحقوق محفوظة لمؤسسة المهند للرخام.</p>
-                <div className="flex gap-6">
-                    <Link href="#" className="hover:text-white">سياسة الخصوصية</Link>
-                    <Link href="#" className="hover:text-white">الشروط والأحكام</Link>
-                </div>
             </div>
         </footer>
     );
