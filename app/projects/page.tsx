@@ -4,6 +4,7 @@ import { Building2, Briefcase, MapPin } from "lucide-react";
 const clients = [
   {
     name: "مجموعة العليان",
+    logo: "https://almohannad.s3.eu-north-1.amazonaws.com/%D8%A7%D9%84%D8%B9%D9%84%D9%8A%D8%A7%D9%86-removebg-preview.png",
     description: "تركيب رخام فاخر للمكاتب الرئيسية والمداخل العامة، مع التركيز على التفاصيل الدقيقة والجودة العالية.",
     workType: "أرضيات وجدران",
     location: "الرياض",
@@ -17,24 +18,28 @@ const clients = [
   },
   {
     name: "الأحساء إنتركونتيننتال",
+    logo: "https://almohannad.s3.eu-north-1.amazonaws.com/ahsa_inter-removebg-preview.png",
     description: "أعمال تجديد الرخام في الأجنحة الملكية والبهو الرئيسي، باستخدام أرقى أنواع الرخام العالمي.",
     workType: "فنادق ومنتجعات",
     location: "الأحساء",
   },
   {
     name: "الشاطئ مول",
+    logo: "https://almohannad.s3.eu-north-1.amazonaws.com/mall-removebg-preview.png",
     description: "تصميم وتنفيذ الأرضيات الرخامية للممرات الرئيسية ومنطقة المطاعم، مع مراعاة متطلبات الاستخدام الكثيف.",
     workType: "مراكز تجارية",
     location: "الدمام",
   },
   {
     name: "نبراس الخليج",
+    logo: "https://almohannad.s3.eu-north-1.amazonaws.com/%D9%86%D8%A8%D8%B1%D8%A7%D8%B3-removebg-preview.png",
     description: "تنفيذ واجهات خارجية من الحجر والرخام الطبيعي، تجمع بين المتانة والجمال المعماري.",
     workType: "واجهات خارجية",
     location: "الخبر",
   },
   {
     name: "شركة أنماط",
+    logo: "https://almohannad.s3.eu-north-1.amazonaws.com/anmatt-removebg-preview.png",
     description: "أعمال فنية بالرخام للتصاميم الداخلية الحديثة، تشمل المغاسل والتكسيات الجدارية المبتكرة.",
     workType: "ديكورات داخلية",
     location: "جدة",
@@ -45,7 +50,7 @@ export default function ProjectsPage() {
   return (
     <main className="flex-grow pt-32 pb-20 px-4 bg-background">
       {/* Background Subtle Pattern */}
-      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none overflow-hidden">
+      <div className="fixed inset-0 z-0 opacity-[0.05] pointer-events-none overflow-hidden">
         <Image
           src="/hero-stockcake.jpg"
           alt="background pattern"
@@ -61,7 +66,7 @@ export default function ProjectsPage() {
             <h1 className="text-4xl md:text-6xl font-al-qassam text-stone-800 relative z-10">
               مشاريعنا
             </h1>
-            <div className="h-2 w-full bg-gold/30 -mt-3 relative z-0" />
+            <div className="h-2 w-full bg-gold/30 mt-1 relative z-0" />
           </div>
           <p className="text-stone-600 text-lg md:text-xl max-w-2xl mx-auto mt-6 font-light">
             نستعرض مجموعة من أبرز المشاريع التي قمنا بتنفيذها بأعلى معايير الجودة والدقة والجمال.
@@ -79,14 +84,14 @@ export default function ProjectsPage() {
               <div className="absolute top-0 right-0 w-16 h-16 bg-gold/5 -mr-8 -mt-8 rotate-45 group-hover:bg-gold/10 transition-all" />
               
               {/* Logo Area */}
-              <div className="mb-8 w-24 h-24 bg-stone-50 border border-stone-100 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500 p-4">
+              <div className="mb-8 w-36 h-36 bg-stone-50 border border-stone-100 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500 p-0 overflow-hidden">
                 {(client as any).logo ? (
                   <div className="relative w-full h-full">
                     <Image
                       src={(client as any).logo}
                       alt={`${client.name} logo`}
                       fill
-                      className="object-contain"
+                      className={`object-contain ${client.name === "مجموعة العليان" ? "scale-[1.5]" : client.name === "نبراس الخليج" ? "p-1" : "p-4"}`}
                     />
                   </div>
                 ) : (
@@ -116,12 +121,6 @@ export default function ProjectsPage() {
                 <p className="text-stone-600 leading-relaxed text-sm md:text-base text-justify">
                   {client.description}
                 </p>
-              </div>
-
-              {/* Bottom Decoration */}
-              <div className="mt-8 pt-6 border-t border-stone-100 flex justify-between items-center">
-                <span className="text-[10px] uppercase tracking-[0.2em] text-stone-400 font-ibm">Project Showcase</span>
-                <div className="w-8 h-px bg-stone-200 group-hover:w-16 group-hover:bg-gold transition-all duration-500" />
               </div>
             </div>
           ))}
