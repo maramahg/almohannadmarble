@@ -26,27 +26,31 @@ export default function Navbar() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     setIsOverDark(true);
-                } else {
-                    setIsOverDark(false);
+                } else if (!entries.some(e => e.isIntersecting && e.target !== entry.target)) {
+                    // Check if there are other dark sections currently intersecting
+                    const otherIntersecting = Array.from(document.querySelectorAll('.dark-section'))
+                        .some(s => {
+                            const rect = s.getBoundingClientRect();
+                            return rect.top <= 80 && rect.bottom >= 0;
+                        });
+                    if (!otherIntersecting) setIsOverDark(false);
                 }
             });
         }, observerOptions);
 
-        const darkSection = document.getElementById("services");
-        if (darkSection) observer.observe(darkSection);
+        const darkSections = document.querySelectorAll('.dark-section');
+        darkSections.forEach(section => observer.observe(section));
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
-            if (darkSection) observer.unobserve(darkSection);
+            darkSections.forEach(section => observer.unobserve(section));
         };
     }, []);
 
     const navLinks = [
         { name: "الرئيسية", href: "/" },
-        { name: "منتجاتنا", href: "/products" },
         { name: "مشاريعنا", href: "/projects" },
         { name: "خدماتنا", href: "/services" },
-        { name: "اتصل بنا", href: "/contact" },
     ];
 
     return (
@@ -84,13 +88,19 @@ export default function Navbar() {
                         </Link>
                     ))}
                     <button className="btn-gold shadow-gold/20 shadow-lg">
-                        اطلب استشارة
+                        اتصل بنا
                     </button>
                 </div>
 
                 {/* Mobile Menu Icon */}
                 <button
-                    className={`md:hidden p-2 z-50 pointer-events-auto transition-colors ${isScrolled && !isOverDark && !isMenuOpen ? "text-stone-900" : "text-gold"}`}
+                    className={`md:hidden p-2 z-50 pointer-events-auto transition-all ${
+                        isMenuOpen 
+                            ? "text-gold" 
+                            : isScrolled && !isOverDark 
+                                ? "text-stone-900" 
+                                : "text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
+                    }`}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     aria-label="Toggle Menu"
                 >
@@ -112,7 +122,7 @@ export default function Navbar() {
                         </Link>
                     ))}
                     <button className="btn-gold px-12 py-4 mt-4" onClick={() => setIsMenuOpen(false)}>
-                        اطلب استشارة
+                        اتصل بنا
                     </button>
                 </div>
             </div>

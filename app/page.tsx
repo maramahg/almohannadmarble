@@ -30,7 +30,7 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-16">
             <button className="btn-gold text-lg px-8 py-3">
-              استكشف منتجاتنا
+              استكشف مشاريعنا
             </button>
             <button className="bg-gold text-dark-brown px-8 py-3 rounded-none hover:bg-dark-brown hover:text-gold transition-all text-lg font-bold">
               تواصل معنا
@@ -53,7 +53,7 @@ export default function Home() {
             <div className="space-y-6 text-stone-700 leading-relaxed text-base md:text-lg text-justify">
               <p>
                 <span className="font-black text-stone-950 text-xl md:text-2xl block mb-2">في مؤسسة المهند للرخام،</span>
-                نفخر بتقديم منتجات استثنائية من الرخام والجرانيت الطبيعي. منتجاتنا تلفت الانتباه وهي مقصد لكل ذوّاق أنيق.
+                نفخر بتقديم أعمال استثنائية من الرخام والجرانيت الطبيعي. أعمالنا تلفت الانتباه وهي مقصد لكل ذوّاق أنيق.
               </p>
               <p>
                 ما يميزنا هو موظفونا الذين يبذلون جهوداً لضمان ظهور أفكارك. شغفنا وإصرارنا لا مثيل لهما، وحبنا للروائع الطبيعية ما يجعلنا نتعمق في البحث عن أفضل أنواع الرخام والجرانيت لتلبية جميع الاحتياجات والرغبات.
@@ -90,7 +90,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-16 md:py-24 bg-stone-900 text-white overflow-hidden relative">
+      <section id="services" className="py-16 md:py-24 bg-stone-900 text-white overflow-hidden relative dark-section">
         <div className="max-w-6xl mx-auto px-4 relative z-10 text-center">
           <div className="mb-12 md:mb-16">
             <div className="w-fit mx-auto">
