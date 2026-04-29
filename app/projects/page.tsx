@@ -10,6 +10,7 @@ const clients = [
   },
   {
     name: "مجموعة البسام",
+    logo: "https://almohannad.s3.eu-north-1.amazonaws.com/bassam-removebg-preview.png",
     description: "توريد وتركيب الرخام الطبيعي للقاعات الكبرى والمكاتب الإدارية، بما يعكس فخامة المكان.",
     workType: "قاعات مؤتمرات",
     location: "الدمام",
@@ -77,9 +78,20 @@ export default function ProjectsPage() {
               {/* Gold Accent Corner */}
               <div className="absolute top-0 right-0 w-16 h-16 bg-gold/5 -mr-8 -mt-8 rotate-45 group-hover:bg-gold/10 transition-all" />
               
-              {/* Logo Placeholder Area */}
-              <div className="mb-8 w-24 h-24 bg-stone-50 border border-stone-100 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
-                <Building2 className="w-10 h-10 text-stone-300 group-hover:text-gold transition-colors" />
+              {/* Logo Area */}
+              <div className="mb-8 w-24 h-24 bg-stone-50 border border-stone-100 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500 p-4">
+                {(client as any).logo ? (
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={(client as any).logo}
+                      alt={`${client.name} logo`}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                ) : (
+                  <Building2 className="w-10 h-10 text-stone-300 group-hover:text-gold transition-colors" />
+                )}
                 <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-gold opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
 
